@@ -8,7 +8,7 @@ class Task(models.Model):
 		('COMPLETE','COMPLETE'), 
 		('INCOMPLETE','INCOMPLETE')
 	)
-    type=(
+    type=( 
     ('-------','-------'),  
 		('GROCERY','GROCERY'), 
 		('MOVIE','MOVIE'),
