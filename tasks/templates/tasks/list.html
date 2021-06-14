@@ -1,0 +1,163 @@
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+
+	body{
+		background-color: pink;
+		width: 100%;
+	}
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	input::placeholder {
+	  color: #d3d3d3;
+	}
+
+	.submit{
+		background-color: white;
+	}
+
+	.center-column{
+		width:800px;
+		margin: 20px auto;
+		padding:20px;
+		background-color:lightskyblue;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0.5,0,0,0.75);
+	}
+
+	.item-row{
+		background-color: #906abd;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+	.btn-danger{
+		background-color: #ffae19;
+		border-color: #e59400;
+	}
+	.btn-danger1{
+		background-color:black;
+		border-color: #000000;
+	}
+	.can1-row{
+		margin: 20px;
+	
+		border-radius: 6px;
+	}
+	.out{
+		margin-left: 1350px;
+	}
+	table, th, td {
+  border: 5px solid black;
+}
+</style>
+<ul>
+	<li><a class="btn btn-secondary btn-lg btn-block"   href="{% url 'add_task'  %}">ADD TASK</a></li></div>	
+	<li><a class="btn btn-secondary btn-lg btn-block"  href="{%  url 'logout' %}">LOGOUT</a></li></div>
+  </ul>
+<div class="Card-Block">
+	<div class="row">
+<div class="col">
+	<div class="card-body bg-dark text-light">
+		<div class="Inside-card">
+			<h5>TASK COMPLETED </h5>
+			<hr>
+			<h1 style="text-align:center; padding:10px">{{completed_tasks}}</h1>
+		</div>
+	</div>
+</div>
+<div class="col">
+	<div class="card-body bg-dark text-light">
+		<div class="Inside-card">
+			<h5>TOTAL TASK </h5>
+			<hr>
+			<h1 style="text-align:center; padding:10px">{{left_task}}</h1>
+		</div>
+	</div>
+</div>
+<div class="col">
+	<div class="card-body bg-dark text-light">
+		<div class="Inside-card">
+			<h5>TASK LEFT TO COMPLETE </h5>
+			<hr>
+			<h1 style="text-align:center; padding:10px">{{uncompleted_tasks}}</h1>
+		</div>
+	</div>
+</div>
+	</div>
+</div>
+<div class="center-column" >
+
+	<span class="hello-msg">HELLO,{{request.user}}</span>
+	
+				</form>
+	<br>
+	<br>
+
+	
+		
+
+			<table style="width:100%">
+				<tr class="table-danger">
+				  <th>UPDATE</th>
+				  <th>DELETE</th>
+				  <th>CREATE DATE</th>
+				  <th>DUE DATE</th>
+				  <th>TASK TYPE</th>
+			      <th>TASK</th>
+				</tr>
+	<div class="todo-list">
+		
+	{% for task in tasks %}
+	<tr class="table-danger">
+	<td><a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a></td>
+	<td><a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a></td>
+	<td><a class="btn btn-sm btn-danger" >{{task.created}}</a></td>
+	<td><a class="btn btn-sm btn-danger" >{{duedate}}</a></td>
+	<td><a class="btn btn-sm btn-danger" >{{task.tasktype}}</a></td>
+		
+	
+
+			{% if task.completetask == 'COMPLETE' %}
+			<td><strike>{{task}}</strike></td>
+			{% else %}
+		<td><span>{{task}}</span></td>
+			{% endif %}
+		</div>
+	{% endfor %}
+</table>
+	</div>
+</div>
+

@@ -1,0 +1,18 @@
+<h3>ADD TASK</h3>
+<style>
+
+	body{
+		  background-color: darkslateblue;
+	  }
+</style >
+<form method="POST"action="">
+
+
+	{% csrf_token %}
+
+{{form.title}}
+{{form.completetask}}
+{{form.tasktype}}
+
+	<input class="btn btn-info" type="submit" name="Create Task">
+</form>
