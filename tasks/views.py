@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
 from .filters import  TaskFilter
-# Create your views here.
+# Create your views here. 
 
 def loginPage(request):
     if request.method == 'POST':
