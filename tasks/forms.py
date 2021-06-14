@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
-class TaskForm(forms.ModelForm):
+class TaskForm(forms.ModelForm): 
 	
 	title = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Add new task...'}))
 
