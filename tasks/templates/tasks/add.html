@@ -5,14 +5,56 @@
 		  background-color: darkslateblue;
 	  }
 </style >
-<form method="POST"action="">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+
+	body{
+		background-color: darkslateblue;
+	}
+
+	.center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+
+	.item-row{
+		background-color: #906abd;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+  input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
 
 
-	{% csrf_token %}
+</style>
 
-{{form.title}}
-{{form.completetask}}
-{{form.tasktype}}
+<div class="center-column">
 
-	<input class="btn btn-info" type="submit" name="Create Task">
-</form> 
+	<form method="POST"action="">
+
+
+		{% csrf_token %}
+	
+	{{form.title}}
+	{{form.completetask}}
+	{{form.tasktype}}
+	
+		<input class="btn btn-info" type="submit" name="Create Task">
+	</form>
+  </form>
+</div>
